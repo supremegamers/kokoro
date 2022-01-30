@@ -1,0 +1,50 @@
+on post-fs-data
+              start logd
+              start adbd
+              mkdir /dev/magisk
+              mount tmpfs tmpfs /dev/magisk mode=0755
+              copy /system/etc/magisk/magisk64 /dev/magisk/magisk64
+              chmod 0755 /dev/magisk/magisk64
+              symlink /dev/magisk/magisk64 /dev/magisk/magisk
+              symlink /dev/magisk/magisk64 /dev/magisk/su
+              symlink /dev/magisk/magisk64 /dev/magisk/resetprop
+              copy /system/etc/magisk/magisk32 /dev/magisk/magisk32
+              chmod 0755 /dev/magisk/magisk32
+              copy /system/etc/magisk/magiskinit /dev/magisk/magiskinit
+              chmod 0755 /dev/magisk/magiskinit
+              symlink /dev/magisk/magiskinit /dev/magisk/magiskpolicy
+              mkdir /dev/magisk/.magisk 700
+              mkdir /dev/magisk/.magisk/mirror 700
+              mkdir /dev/magisk/.magisk/block 700
+              rm /dev/.magisk_unblock
+              start IhhslLhHYfse
+              start FAhW7H9G5sf
+              umount /dev/magisk/.magisk/mirror/data
+              rm /dev/magisk/.magisk/mirror/data
+              symlink /data /dev/magisk/.magisk/mirror/data
+              wait /dev/.magisk_unblock 40
+              rm /dev/.magisk_unblock
+
+          service IhhslLhHYfse /system/bin/sh /system/etc/magisk/loadpolicy.sh
+              user root
+              seclabel u:r:magisk:s0
+              oneshot
+
+          service FAhW7H9G5sf /dev/magisk/magisk --post-fs-data
+              user root
+              seclabel u:r:magisk:s0
+              oneshot
+
+          service HLiFsR1HtIXVN6 /dev/magisk/magisk --service
+              class late_start
+              user root
+              seclabel u:r:magisk:s0
+              oneshot
+
+          on property:sys.boot_completed=1
+              start YqCTLTppv3ML
+
+          service YqCTLTppv3ML /dev/magisk/magisk --boot-complete
+              user root
+              seclabel u:r:magisk:s0
+              oneshot
