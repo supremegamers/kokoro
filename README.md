@@ -1,6 +1,7 @@
 # Project Kokoro - integrate Magisk into your Android-x86 build (x86_64 only)
 
 **Current Magisk branch : stable**
+
 **Current Magisk version : 24.1** 
 
 This project is aim to integrate Magisk into Android-x86 build automatically, and can even be able to use modules as well as Zygisk. It's mainly based on works like [MagiskOnWSA](https://github.com/LSPosed/MagiskOnWSA) or [MagiskOnEmu](https://github.com/HuskyDG/MagiskOnEmu) so you will see they might be pretty similar.
