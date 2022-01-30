@@ -17,8 +17,11 @@ Note that the instruction is only for building the image, if you want to manuall
 - When building, please export `ANDROID_INTEGRATE_MAGISK=true` so that the build will start copying the Magisk files in.
 
 ## How does it works
-Well..... same as the 2 projects above, init.kokoro.rc will prepare a tmpfs folder (in this case `/dev/magisk`) and then putting all the Magisk files into it (the files are located in /system/etc/magisk), linking to the appropriate tools and then starting the Magisk boot stage like `post-fs-data`/`services`/`boot-complete` . After that, Magisk is completely initialized and you can use it.
+Well..... same as the 2 projects above, init.kokoro.rc will prepare a tmpfs folder (in this case `/dev/magisk`) and then putting all the Magisk files into it (the files are located in /system/etc/magisk), linking to the appropriate tools and then starting the Magisk boot stage like `post-fs-data`/`services`/`boot-complete` .
+
 In order to prevent the magic mount to accidetally mount the whole drive to `/data` instead of the only data folder or image, I unmount the data in magic mount (if it does mount) and then linking the mount place to /data instead. Not only does it help magic mount to not accidentally mount the drive, but also helps the Magisk modules show and working properly.
+
+After that, Magisk is completely initialized and you can use it.
 
 ## Origin of the name
 The name `Kokoro` comes from [Hata no Kokoro](https://en.touhouwiki.net/wiki/Hata_no_Kokoro), a character from _Touhou Project_ , usually appears on fighting games in the series. Since her power is manipulating emotions by using the masks I decided to use them for this project. 
