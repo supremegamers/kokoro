@@ -25,7 +25,7 @@ The name `Kokoro` comes from [Hata no Kokoro](https://en.touhouwiki.net/wiki/Hat
 
 ![Kokoro](https://en.touhouwiki.net/images/8/8d/Th155Kokoro.png)
 
-_Kokoro art made by [Moe Harukawa](https://en.touhouwiki.net/wiki/Moe_Harukawa), usually appears in fighting games produced by [Tasofro](https://tasofro.net/) + [Team Shanghai Alice](https://www16.big.or.jp/~zun/)_
+_Kokoro art made by [Moe Harukawa](https://en.touhouwiki.net/wiki/Moe_Harukawa) used in the main series fighting games produced by [Tasofro](https://tasofro.net/) + [Team Shanghai Alice](https://www16.big.or.jp/~zun/)_
 
 ## Credit
 
