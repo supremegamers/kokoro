@@ -19,6 +19,7 @@ In order to prevent the magic mount to accidetally mount the whole drive to `/da
 
 ## Origin of the name
 The name `Kokoro` comes from [Hata no Kokoro](https://en.touhouwiki.net/wiki/Hata_no_Kokoro), a character from _Touhou Project_ , usually appears on fighting games in the series. Since her power is manipulating emotions by using the masks I decided to use them for this project. 
+
 ![Kokoro](https://en.touhouwiki.net/images/8/8d/Th155Kokoro.png)
 
 _Kokoro art made by [Moe Harukawa](https://en.touhouwiki.net/wiki/Moe_Harukawa), usually appears in fighting games produced by [Tasofro](https://tasofro.net/) + [Team Shanghai Alice](https://www16.big.or.jp/~zun/)_
