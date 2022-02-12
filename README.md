@@ -16,7 +16,7 @@ Note that the instruction is only for building the image, if you want to manuall
 - It is recommend to cherry-pick [this commit](https://github.com/supremegamers/bootable_newinstaller/commit/929245d5c46aa19ddab5de8cf153bf82b6adc16b) on bootable/newinstaller too so that if you extract system.sfs out to .img Magisk is still usable, but keep in mind that you will never be able to set system as R/W. 
 - Go to device/generic/common and cherry-pick [this commit](https://github.com/supremegamers/device_generic_common/commit/2a37e98631fff756f933222b6586258f2897999e) so that the build will copy the files and also init.*.rc can recognize init.kokoro.rc
 - When building, please export `ANDROID_INTEGRATE_MAGISK=true` so that the build will start copying the Magisk files in.
-- **WARMING** : If the build failed in the selinux test stage (to check the integrity of the file), remove the whole out/target/product/*arch* (in this case x86_64) and then try again, **do not make clean or delete the out folder**
+- **WARNING** : If the build failed in the selinux test stage (to check the integrity of the file), remove the whole out/target/product/*arch* (in this case x86_64) and then try again, **do not make clean or delete the out folder**
 
 ## How does it works
 Well..... same as the 2 projects above, init.kokoro.rc will prepare a tmpfs folder (in this case `/dev/magisk`) and then putting all the Magisk files into it (the files are located in /system/etc/magisk), linking to the appropriate tools and then starting the Magisk boot stage like `post-fs-data`/`services`/`boot-complete` .
